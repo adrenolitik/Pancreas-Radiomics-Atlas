@@ -570,6 +570,14 @@ select:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px v
   line-height: 1.55;
 }
 
+.cite-fulltext {
+  display: block;
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
 .footer {
   border-top: 1px solid var(--line);
   padding: 22px clamp(18px, 4vw, 48px) 34px;

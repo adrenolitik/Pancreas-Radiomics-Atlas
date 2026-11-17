@@ -47,7 +47,13 @@ On GitHub, enable **Settings → Pages → Source: GitHub Actions** and the incl
 
 | Path | Contents |
 |------|----------|
-| `index.html`, `assets/` | the atlas page, stylesheet, script and its JSON payload |
+| `index.html` | the atlas page: cohort summary, morphometry, feature explorer, data and citation |
+| `assets/styles.css` | page styling |
+| `assets/app.js` | front-end logic: rendering, filtering, per-feature drawer and histogram |
+| `assets/i18n.js` | English and Russian interface strings |
+| `assets/data/atlas.json` | payload behind the page: per-feature statistics and histogram bins |
+| `assets/screenshot-en.png` | page screenshot, English interface |
+| `assets/screenshot-ru.png` | page screenshot, Russian interface |
 | `data/pancreas-non-contrast.csv` | 514 studies × 944 features, non-contrast CT |
 | `data/pancreas-contrast-enhanced.csv` | 389 studies × 944 features, portal venous phase |
 | `data/pancreas-normative-reference.csv` | per-feature reference statistics for both phases |
@@ -55,7 +61,12 @@ On GitHub, enable **Settings → Pages → Source: GitHub Actions** and the incl
 | `data/cohort.csv` | anonymised ID, sex, age, phase availability |
 | `data/README.md` | column reference for the files above |
 | `scripts/build_atlas.py` | regenerates every file in `data/` and the site payload |
+| `scripts/requirements.txt` | build dependencies (pandas, numpy, openpyxl) |
+| `.github/workflows/pages.yml` | publishes the atlas to GitHub Pages on pushes to the default branch |
+| `CITATION.cff` | machine-readable citation for the RADAPT publication |
+| `README.md`, `README_RU.md` | this documentation in English and Russian |
 | `LICENSE.md` | CC BY-NC-ND 4.0, inherited from the source dataset |
+| `.nojekyll`, `.gitignore` | GitHub Pages marker; local build artefacts stay untracked |
 
 ## Pancreatic morphometry at a glance
 

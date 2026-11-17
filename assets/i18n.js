@@ -104,6 +104,7 @@ window.ATLAS_I18N = {
     'data.licenseText':
       'Distributed for non-commercial research under <a href="LICENSE.md">CC&nbsp;BY-NC-ND&nbsp;4.0</a>, the licence of the source dataset. Not a medical device; reference values are not diagnostic thresholds.',
     'data.citeTitle': 'Cite',
+    'data.fullText': 'Full text',
     'd.nc': '514 studies × 944 features',
     'd.pvp': '389 studies × 944 features',
     'd.ref': 'per-feature quantiles, both phases',
@@ -241,6 +242,7 @@ window.ATLAS_I18N = {
     'data.licenseText':
       'Распространяется для некоммерческих исследований под лицензией <a href="LICENSE.md">CC&nbsp;BY-NC-ND&nbsp;4.0</a> — лицензией исходного набора. Не является медицинским изделием; референсные значения не являются диагностическими порогами.',
     'data.citeTitle': 'Цитирование',
+    'data.fullText': 'Полный текст',
     'd.nc': '514 исследований × 944 признака',
     'd.pvp': '389 исследований × 944 признака',
     'd.ref': 'квантили по каждому признаку, обе фазы',
