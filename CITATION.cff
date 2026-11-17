@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+title: Pancreas Radiomics Atlas
+message: >-
+  This atlas is a pancreas-specific subset of the RADAPT dataset. If you use these data,
+  please cite the RADAPT publication listed below.
+type: dataset
+version: 1.0.0
+date-released: 2026-11-17
+license: CC-BY-NC-ND-4.0
+keywords:
+  - radiomics
+  - pancreas
+  - computed tomography
+  - PyRadiomics
+  - RADAPT
+  - reference values
+  - healthy controls
+references:
+  - type: article
+    title: >-
+      Developing a Radiomics Atlas Dataset of normal Abdominal and Pelvic computed
+      Tomography (RADAPT)
+    authors:
+      - family-names: Kapetanou
+        given-names: Elisavet
+      - family-names: Malamas
+        given-names: Stylianos
+      - family-names: Leventis
+        given-names: Dimitrios
+      - family-names: Karantanas
+        given-names: Apostolos H.
+      - family-names: Klontzas
+        given-names: Michail E.
+    journal: Journal of Imaging Informatics in Medicine
+    volume: 37
+    start: 1273
+    end: 1281
+    year: 2024
+    doi: 10.1007/s10278-024-01028-7
+    url: https://doi.org/10.1007/s10278-024-01028-7

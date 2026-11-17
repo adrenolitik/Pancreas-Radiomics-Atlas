@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pancreas Radiomics Atlas — RADAPT pancreas reference features</title>
+<meta name="description" content="Normative PyRadiomics reference values for 944 features of the pancreas in 514 non-contrast and 389 portal-venous-phase CT studies from the RADAPT radiomics atlas.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f6f68'/%3E%3Ccircle cx='16' cy='16' r='6.5' fill='none' stroke='%23fff' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#explorer">Skip to feature explorer</a>
+
+<header class="topbar">
+  <a class="brand" href="#top">
+    <span class="mark" aria-hidden="true">PR</span>
+    <span class="brand-text">Pancreas Radiomics Atlas</span>
+  </a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#overview">Cohort</a>
+    <a href="#morphometry">Morphometry</a>
+    <a href="#explorer">Features</a>
+    <a href="#data">Data &amp; citation</a>
+  </nav>
+  <div class="phase-key">
+    <span><i class="swatch nc"></i>NC</span>
+    <span><i class="swatch pvp"></i>PVP</span>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <p class="eyebrow">RADAPT · pancreas subset</p>
+    <h1>Reference radiomic signatures of the normal pancreas</h1>
+    <p class="lede">
+      A pancreas-specific view of the RADAPT radiomics atlas: shape, first-order and texture
+      features extracted with PyRadiomics from the pancreas segmentations of healthy adults.
+      Every feature is reported with its distribution in both CT phases, so any measurement can
+      be read against a normative range.
+    </p>
+    <dl class="stats">
+      <div class="stat">
+        <dt>Patients</dt>
+        <dd id="stat-patients">522</dd>
+        <span class="stat-note" id="note-patients">with a pancreas segmentation</span>
+      </div>
+      <div class="stat">
+        <dt>Non-contrast studies</dt>
+        <dd id="stat-nc">514</dd>
+        <span class="stat-note">unenhanced CT</span>
+      </div>
+      <div class="stat">
+        <dt>Contrast-enhanced studies</dt>
+        <dd id="stat-pvp">389</dd>
+        <span class="stat-note">portal venous phase</span>
+      </div>
+      <div class="stat">
+        <dt>Radiomic features</dt>
+        <dd id="stat-features">944</dd>
+        <span class="stat-note" id="note-features">in 7 feature classes</span>
+      </div>
+    </dl>
+  </section>
+
+  <section id="overview" class="section">
+    <div class="section-head">
+      <h2>Cohort and provenance</h2>
+      <p>
+        Adults with no pathology reported on abdominal CT, segmented automatically with
+        TotalSegmentator and reviewed by a senior radiology resident. Radiomic features were
+        extracted with PyRadiomics after 4&nbsp;×&nbsp;4&nbsp;×&nbsp;4&nbsp;mm voxel resampling.
+      </p>
+    </div>
+    <div class="split">
+      <div class="card">
+        <h3>Pancreas cohort</h3>
+        <table class="kv">
+          <tbody id="cohort-body">
+            <tr><th>Patients</th><td>522</td></tr>
+          </tbody>
+        </table>
+        <p class="footnote">
+          A patient can contribute to both phases; <span id="cohort-both">381</span> patients have a
+          pancreas segmentation in both.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Feature composition</h3>
+        <div id="class-list" class="class-list" aria-live="polite"></div>
+        <p class="footnote">
+          10 filter families: the original image, one Laplacian-of-Gaussian scale
+          (σ&nbsp;=&nbsp;5&nbsp;mm) and eight wavelet decompositions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="morphometry" class="section">
+    <div class="section-head">
+      <h2>Pancreatic morphometry</h2>
+      <p>
+        Shape features of the pancreas gland, as median [interquartile range]. Volumes and
+        surfaces are measured on the resampled 4&nbsp;mm mask, so they are comparable across
+        studies rather than absolute volumetry.
+      </p>
+    </div>
+    <div class="card table-card">
+      <table class="morph">
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col" class="num">NC median [IQR]</th>
+            <th scope="col" class="num">PVP median [IQR]</th>
+            <th scope="col" class="num">Δ median</th>
+            <th scope="col" class="bar-col"><span class="sr">Distribution</span></th>
+          </tr>
+        </thead>
+        <tbody id="morph-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="explorer" class="section">
+    <div class="section-head">
+      <h2>Feature explorer</h2>
+      <p>
+        Search the 944 features and filter by class or image filter. Select a feature to see its
+        full distribution in both phases. <span class="hint">Δ&nbsp;median compares the phase
+        medians; d is Cohen's standardised difference (PVP minus NC).</span>
+      </p>
+    </div>
+
+    <div class="controls">
+      <div class="search">
+        <label class="sr" for="q">Search features</label>
+        <svg class="search-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6"></circle><path d="M13.5 13.5 18 18"></path></svg>
+        <input id="q" type="search" placeholder="Search e.g. glcm_Contrast, Sphericity, wavelet-HHH" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="selects">
+        <label class="sr" for="family">Filter family</label>
+        <select id="family"></select>
+        <label class="sr" for="sort">Sort</label>
+        <select id="sort">
+          <option value="dataset">Sort: atlas order</option>
+          <option value="name">Sort: feature name</option>
+          <option value="effect">Sort: largest phase difference</option>
+          <option value="median">Sort: highest PVP median</option>
+        </select>
+      </div>
+      <div id="class-chips" class="chips" role="group" aria-label="Feature class"></div>
+    </div>
+
+    <p class="result-line"><span id="result-count">944</span> features shown</p>
+
+    <div class="card table-card">
+      <div class="table-wrap">
+        <table class="features">
+          <thead>
+            <tr>
+              <th scope="col">Feature</th>
+              <th scope="col">Class</th>
+              <th scope="col" class="num">NC median (p25–p75)</th>
+              <th scope="col" class="num">PVP median (p25–p75)</th>
+              <th scope="col" class="num">Δ median</th>
+              <th scope="col" class="num">d</th>
+            </tr>
+          </thead>
+          <tbody id="feature-body"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="empty" hidden>No feature matches that search. Try a shorter fragment of the PyRadiomics name.</p>
+    </div>
+  </section>
+
+  <section id="data" class="section">
+    <div class="section-head">
+      <h2>Data and citation</h2>
+      <p>Everything on this page is generated from the files below; the build script is included.</p>
+    </div>
+    <div class="split two">
+      <div class="card">
+        <h3>Files</h3>
+        <ul class="downloads">
+          <li><a href="data/pancreas-non-contrast.csv" download>pancreas-non-contrast.csv</a><span>514 studies × 944 features</span></li>
+          <li><a href="data/pancreas-contrast-enhanced.csv" download>pancreas-contrast-enhanced.csv</a><span>389 studies × 944 features</span></li>
+          <li><a href="data/pancreas-normative-reference.csv" download>pancreas-normative-reference.csv</a><span>per-feature quantiles, both phases</span></li>
+          <li><a href="data/pancreas-features-dictionary.csv" download>pancreas-features-dictionary.csv</a><span>filter family, class, unit</span></li>
+          <li><a href="data/cohort.csv" download>cohort.csv</a><span>anonymised ID, sex, age, phase availability</span></li>
+          <li><a href="assets/data/atlas.json" download>atlas.json</a><span>payload behind this page</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Source and licence</h3>
+        <p class="body-text">
+          Derived from the <a href="https://github.com/eliskape/Radiomics-Atlas">RADAPT radiomics
+          atlas</a> (Elisavet Kapetanou, University of Crete), which covers 53 abdominal and pelvic
+          structures in 531 individuals. This repository curates the pancreas only and adds the
+          normative tables above.
+        </p>
+        <p class="body-text">
+          Distributed for non-commercial research under
+          <a href="LICENSE.md">CC&nbsp;BY-NC-ND&nbsp;4.0</a>, the licence of the source dataset.
+          Not a medical device; reference values are not diagnostic thresholds.
+        </p>
+        <h3 class="mt">Cite</h3>
+        <blockquote class="cite">
+          Kapetanou E, Malamas S, Leventis D, Karantanas AH, Klontzas ME. Developing a Radiomics
+          Atlas Dataset of normal Abdominal and Pelvic computed Tomography (RADAPT).
+          <em>J Imaging Inform Med.</em> 2024;37:1273–1281.
+          <a href="https://doi.org/10.1007/s10278-024-01028-7">doi:10.1007/s10278-024-01028-7</a>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Pancreas Radiomics Atlas · built from RADAPT · CC BY-NC-ND 4.0 · <span id="generated">2026</span></p>
+</footer>
+
+<aside id="drawer" class="drawer" hidden aria-labelledby="drawer-title" role="dialog" aria-modal="false">
+  <div class="drawer-head">
+    <div>
+      <p class="drawer-eyebrow" id="drawer-eyebrow">Feature</p>
+      <h2 id="drawer-title">—</h2>
+    </div>
+    <button id="drawer-close" class="close" type="button" aria-label="Close feature details">×</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-badges" id="drawer-badges"></div>
+    <figure class="chart">
+      <figcaption>Distribution of values, NC vs PVP (share of studies per bin)</figcaption>
+      <canvas id="hist" width="640" height="260" role="img" aria-label="Histogram of the selected feature in both phases"></canvas>
+      <div class="chart-legend"><span><i class="swatch nc"></i>NC</span><span><i class="swatch pvp"></i>PVP</span></div>
+    </figure>
+    <table class="quantiles">
+      <thead>
+        <tr><th scope="col">Statistic</th><th scope="col" class="num">NC</th><th scope="col" class="num">PVP</th></tr>
+      </thead>
+      <tbody id="quantile-body"></tbody>
+    </table>
+    <p class="footnote" id="drawer-note"></p>
+  </div>
+</aside>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
