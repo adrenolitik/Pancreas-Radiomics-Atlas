@@ -21,7 +21,17 @@ against: percentiles, interquartile ranges and phase-to-phase differences for al
 * cohort and provenance summary,
 * pancreatic morphometry — median [IQR] for volume, axes, sphericity, surface area in both phases,
 * a searchable explorer over all 944 features with class and filter filters, sortable by
-  phase difference, and a per-feature panel with a distribution histogram and quantile table.
+  phase difference, and a per-feature panel with a distribution histogram and quantile table,
+* an EN/RU language switcher that follows the browser language on the first visit,
+  remembers the choice in `localStorage`, and updates `<html lang>` with it.
+
+**English interface**
+
+![Atlas page in English](assets/screenshot-en.png)
+
+**Russian interface**
+
+![Atlas page in Russian](assets/screenshot-ru.png)
 
 Open it locally:
 
