@@ -145,5 +145,7 @@ International** (см. [LICENSE.md](LICENSE.md)): только некоммер�
 > *Journal of Imaging Informatics in Medicine.* 2024;37:1273–1281.
 > <https://doi.org/10.1007/s10278-024-01028-7>
 
+Полный текст статьи: <https://link.springer.com/article/10.1007/s10278-024-01028-7>
+
 Контакты авторов исходного набора: Michail E. Klontzas (miklontzas@ics.forth.gr),
 Elisavet Kapetanou (elisavet.kapetanou@gmail.com).

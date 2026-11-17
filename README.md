@@ -136,6 +136,8 @@ If you use these data, cite the original publication:
 > *Journal of Imaging Informatics in Medicine.* 2024;37:1273–1281.
 > <https://doi.org/10.1007/s10278-024-01028-7>
 
+Full text: <https://link.springer.com/article/10.1007/s10278-024-01028-7>
+
 ```bibtex
 @article{kapetanou2024radapt,
   title   = {Developing a Radiomics Atlas Dataset of normal Abdominal and Pelvic computed Tomography (RADAPT)},
